@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124120800) do
+ActiveRecord::Schema.define(version: 20160125235525) do
 
   create_table "labores", force: :cascade do |t|
     t.string   "maquina"
     t.decimal  "superficie", precision: 10, scale: 2
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "reporte"
+  end
+
+  create_table "mantenimientos", force: :cascade do |t|
+    t.string   "insumo"
+    t.string   "maquina"
+    t.integer  "horometro"
+    t.decimal  "cantidad",      precision: 10, scale: 2
+    t.decimal  "costoestandar", precision: 10, scale: 2
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "reporte"
   end
 
 end

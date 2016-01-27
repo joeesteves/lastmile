@@ -1,0 +1,16 @@
+one:
+  maquina: alfa
+  superficie: 10
+  reporte: fertilizadoras
+two:
+  maquina: alfa
+  superficie: 10
+  reporte: fertilizadoras
+three:
+  maquina: beta
+  superficie: 5
+  reporte: fertilizadoras
+four:
+  maquina: beta
+  superficie: 5
+  reporte: fertilizadoras
