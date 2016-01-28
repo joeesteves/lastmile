@@ -7,6 +7,26 @@ class MantenimientoTest < ActiveSupport::TestCase
     # 5 del archivo mas 4 fixtures
     assert Mantenimiento.all.count == 9, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
   end
+  test  "Importar XLSX mantenimientos de fertilizacion" do
+    file = File.open 'test/files/mantenimientos.xlsx'
+    Mantenimiento.importar file, 'fertilizadoras'
+    # 5 del archivo mas 4 fixtures
+    assert Mantenimiento.all.count == 9, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+  end
+
+  test  "Importar XLS mantenimientos de fertilizacion" do
+    file = File.open 'test/files/mantenimientos.xls'
+    Mantenimiento.importar file, 'fertilizadoras'
+    # 5 del archivo mas 4 fixtures
+    assert Mantenimiento.all.count == 9, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+  end
+  test  "Importar XLS mant de fertilizacion directo de ceres" do
+    file = File.open 'test/files/mant.xls'
+    Mantenimiento.importar file, 'fertilizadoras'
+    # 5 del archivo mas 4 fixtures
+    assert Mantenimiento.all.count == 7, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+  end
+
 
   test  "horometro con fixtures" do
     assert Mantenimiento.horas['alfa'] == 100

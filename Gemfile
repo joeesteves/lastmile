@@ -8,6 +8,8 @@ gem 'rails-api'
 gem 'spring', :group => :development
 
 gem 'roo'
+gem 'roo-xls'
+
 group :test do
   gem 'byebug'
 end
