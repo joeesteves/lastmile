@@ -9,6 +9,8 @@ gem 'spring', :group => :development
 
 gem 'roo'
 gem 'roo-xls'
+gem 'rack-cors', :require => 'rack/cors'
+
 
 group :test do
   gem 'byebug'
