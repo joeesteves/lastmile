@@ -26,7 +26,7 @@ class Reporteador
     end
     ary = []
     hsh.each do |k,v|
-      ary.push(v.merge({nombre: k }))
+      ary.push({nombre: k }.merge(v))
     end
     ary
 
