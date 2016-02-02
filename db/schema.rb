@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160125235525) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "labores", force: :cascade do |t|
     t.string   "maquina"
     t.decimal  "superficie", precision: 10, scale: 2

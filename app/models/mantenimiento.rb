@@ -21,13 +21,13 @@ class Mantenimiento < ActiveRecord::Base
     end
   end
   def self.gasoil(precio)
-    where('insumo like "%gasoil%"').group(:maquina).sum(:cantidad).inject({}) do |hsh,(k,v)|
+    where("insumo like '%gasoil%'").group(:maquina).sum(:cantidad).inject({}) do |hsh,(k,v)|
       hsh[k] = {cantidad: v.to_i, costo: (v * precio).to_f }
       hsh
     end
   end
   def self.gastos_varios
-    where('insumo not like "%gasoil%"').group(:maquina).sum('cantidad * costoestandar').inject({}) do |hsh,(k,v)|
+    where("insumo not like '%gasoil%'").group(:maquina).sum("cantidad * costoestandar").inject({}) do |hsh,(k,v)|
       hsh[k] = v.to_i
       hsh
     end

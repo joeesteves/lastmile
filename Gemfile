@@ -10,15 +10,11 @@ gem 'spring', :group => :development
 gem 'roo'
 gem 'roo-xls'
 gem 'rack-cors', :require => 'rack/cors'
-
+gem 'pg'
 
 group :test do
   gem 'byebug'
 end
-
-gem 'sqlite3'
-
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
