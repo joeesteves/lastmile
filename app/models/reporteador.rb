@@ -24,7 +24,11 @@ class Reporteador
     Mantenimiento.gastos_varios.each do |k,v|
       hsh[k][:gastos_varios] = v
     end
-    hsh
+    ary = []
+    hsh.each do |k,v|
+      ary.push(v.merge({nombre: k }))
+    end
+    ary
 
   end
 
