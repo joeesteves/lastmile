@@ -9,7 +9,7 @@ class LaborTest < ActiveSupport::TestCase
     assert UploadWorker.jobs.count == 1
     UploadWorker.drain
     # 5 del archivo 4 del fixtures
-    assert Labor.all.count == 9, 'Las lineas en la tabla no coinciden con las del archivo '
+    assert Labor.all.count == 5, 'Las lineas en la tabla no coinciden con las del archivo '
   end
   test  "Al importarsin errores devuleve true" do
     file = File.open 'test/files/labores.csv'

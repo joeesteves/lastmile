@@ -9,7 +9,7 @@ class MantenimientoTest < ActiveSupport::TestCase
     UploadWorker.drain
     assert UploadWorker.jobs.count == 0
     # 5 del archivo mas 4 fixtures
-    assert Mantenimiento.all.count == 9, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+    assert Mantenimiento.all.count == 5, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
   end
   test  "Importar XLSX mantenimientos de fertilizacion" do
     file = File.open 'test/files/mantenimientos.xlsx'
@@ -17,7 +17,7 @@ class MantenimientoTest < ActiveSupport::TestCase
     assert UploadWorker.jobs.count == 1
     UploadWorker.drain
     # 5 del archivo mas 4 fixtures
-    assert Mantenimiento.all.count == 9, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+    assert Mantenimiento.all.count == 5, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
   end
 
   test  "Importar XLS" do
@@ -26,7 +26,7 @@ class MantenimientoTest < ActiveSupport::TestCase
     assert UploadWorker.jobs.count == 1
     UploadWorker.drain
     # 5 del archivo mas 4 fixtures
-    assert Mantenimiento.all.count == 9, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+    assert Mantenimiento.all.count == 5, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
   end
   test  "Importar XLS mant de fertilizacion directo de ceres" do
     file = File.open 'test/files/mant.xls'
@@ -34,7 +34,7 @@ class MantenimientoTest < ActiveSupport::TestCase
     assert UploadWorker.jobs.count == 1
     UploadWorker.drain
     # 5 del archivo mas 4 fixtures
-    assert Mantenimiento.all.count == 7, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
+    assert Mantenimiento.all.count == 3, "Las lineas en la tabla (#{Mantenimiento.all.count } )no coinciden con las del archivo"
   end
 
 
