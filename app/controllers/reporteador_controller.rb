@@ -10,8 +10,7 @@ class ReporteadorController < ApplicationController
     reporte = params[:reporte]
     file = params[:file]
     if tipo.importar file, reporte
-      puts 'acaaaaaaaaaaaaaaaa ' + reporte
-      render json: tipo.all
+      head 200
     else
       render json: {errors: 'hubo un problema'}, status: 422
     end

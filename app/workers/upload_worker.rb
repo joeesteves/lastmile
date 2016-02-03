@@ -1,15 +1,15 @@
 class UploadWorker
   include Sidekiq::Worker
 
-  def perform(klass, file_path, reporte)
+  def perform(klass, file_path, reporte, referencia)
     @klass = klass.constantize
-    # file_path = Rails.root.path + "/" + file_path
     file = File.open file_path
     case File.extname(file)
     when '.csv' then csv file_path, reporte
     when ".xlsx" then xlsx file_path, reporte
     when ".xls" then xls file_path, reporte
     end
+    Estado.find_by(referencia: referencia).update(valor: 'terminado')
   end
 
   private
