@@ -3,6 +3,7 @@ class UploadWorker
 
   def perform(klass, file_path, reporte)
     @klass = klass.constantize
+    # file_path = Rails.root.path + "/" + file_path
     file = File.open file_path
     case File.extname(file)
     when '.csv' then csv file_path, reporte
