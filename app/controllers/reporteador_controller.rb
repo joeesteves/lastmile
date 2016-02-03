@@ -9,8 +9,8 @@ class ReporteadorController < ApplicationController
     tipo = params[:tipo].classify.constantize
     reporte = params[:reporte]
     file = params[:file]
-    tipo.clean reporte
-    if tipo.importar file.open, reporte
+    if tipo.importar file, reporte
+      puts 'acaaaaaaaaaaaaaaaa ' + reporte
       render json: tipo.all
     else
       render json: {errors: 'hubo un problema'}, status: 422

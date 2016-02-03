@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125235525) do
+ActiveRecord::Schema.define(version: 20160202201516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20160125235525) do
   create_table "mantenimientos", force: :cascade do |t|
     t.string   "insumo"
     t.string   "maquina"
-    t.integer  "horometro"
     t.decimal  "cantidad",      precision: 10, scale: 2
     t.decimal  "costoestandar", precision: 10, scale: 2
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "reporte"
+    t.decimal  "horometro",     precision: 10, scale: 2
   end
 
 end
