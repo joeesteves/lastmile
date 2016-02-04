@@ -34,19 +34,13 @@ class UploadWorker
     end
 
     def mass_import reporte, hoja
-      head = hoja.row(1).map{ |h| h.downcase }
-      del_index = []
-      head.each_with_index do |c, index|
-        del_index.push(index) unless @klass.column_names.include? c
-      end
-      del_index.each_with_index {|i,index| head.slice!(i-index)}
-      head.push('reporte','created_at', 'updated_at')
-      columns = head.join(', ')
+      headers = headerify hoja
+      columns = headers[:head]
       values = []
       table = @klass.table_name
       (2..hoja.last_row).each do |i|
         obj = hoja.row(i)
-        del_index.each_with_index {|i,index| obj.slice!(i-index)}
+        headers[:del_index].each_with_index {|i,index| obj.slice!(i-index)}
         item = "(" + obj.push(reporte, DateTime.now.to_s,DateTime.now.to_s).map{|i| "'"+i.to_s+"'" }.join(', ') + ")"
         values.push item
       end
@@ -55,6 +49,23 @@ class UploadWorker
       conn.execute sql
       true
     end
+
+    def headerify hoja
+      head = hoja.row(1).map{ |h| @klass::SINONIMOS[h.downcase.to_sym] || h.downcase }
+      del_index = del_index head
+      del_index.each_with_index {|i,index| head.slice!(i-index)}
+      head.push('reporte','created_at', 'updated_at')
+      {head: head.join(', '), del_index: del_index }
+    end
+
+    def del_index head
+      del_index = []
+      head.each_with_index do |c, index|
+        del_index.push(index) unless @klass.column_names.include? c
+      end
+      del_index
+    end
+
 
     def filter hsh
       hsh.select do |k|

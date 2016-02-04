@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2016-02-04
+  maquina: MyString
+  proveedor: MyString
+  insumo: MyString
+  obs: MyString
+  valor: 10.00
+  comprobante: MyString
+  reporte: fertilizadoras
+
+two:
+  fecha: 2016-02-04
+  maquina: MyString
+  proveedor: MyString
+  insumo: MyString
+  obs: MyString
+  valor: 11.22
+  comprobante: MyString
+  reporte: fertilizadoras

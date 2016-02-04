@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  maquina: MyString
+  valor: 9.99
+  residual: 9.99
+  vidautil: 9.99
+  cuota: 9.99
+
+two:
+  maquina: MyString
+  valor: 9.99
+  residual: 9.99
+  vidautil: 9.99
+  cuota: 9.99

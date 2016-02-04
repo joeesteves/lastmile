@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :reporteador, only: [:index, :create]
+  resources :reporteador, only: :index
+  resources :uploader, only: :create
   post 'estados/check'
     # Example resource route with options:
   #   resources :products do

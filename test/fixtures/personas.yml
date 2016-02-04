@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  costo: 9.99
+  maquina: MyString
+  porcentaje: 9.99
+  reporte: todos
+two:
+  nombre: MyString
+  costo: 9.99
+  maquina: MyString
+  porcentaje: 9.99
+  reporte: todos
