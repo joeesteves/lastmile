@@ -4,5 +4,5 @@ class ReporteadorController < ApplicationController
     @informe = Reporteador.new(tipo).generar
     render json: @informe
   end
-  
+
 end

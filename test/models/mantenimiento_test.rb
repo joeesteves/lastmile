@@ -41,17 +41,18 @@ class MantenimientoTest < ActiveSupport::TestCase
   end
 
 
-  test  "horometro con fixtures" do
-    assert Mantenimiento.horas['alfa'] == 100
+  test  "resumen" do
+    resumen = Mantenimiento.resumen 'fertilizadoras', 2
+    assert Mantenimiento.resumen 'fertilizadoras', 2
   end
 
-  test  "gasoil" do
-    assert Mantenimiento.gasoil(2)['alfa'] == {cantidad: 200, costo: 400}
-  end
-
-  test  "gastos varios insumos" do
-    assert Mantenimiento.gastos_varios['beta'] == 250
-  end
+  # test  "gasoil" do
+  #   assert Mantenimiento.gasoil(2)['alfa'] == {cantidad: 200, costo: 400}
+  # end
+  #
+  # test  "gastos varios insumos" do
+  #   assert Mantenimiento.gastos_varios['beta'] == 250
+  # end
 
 
 end

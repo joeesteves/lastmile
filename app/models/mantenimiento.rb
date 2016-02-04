@@ -11,25 +11,32 @@ class Mantenimiento < ActiveRecord::Base
     self.costoestandar = valor
   end
 
+  def self.resumen reporte, precio_gasoil
+    filtrado = self.where(reporte: reporte)
+    hsh = {}
+    horas filtrado, hsh
+    gasoil filtrado, hsh, precio_gasoil
+    gastos_varios filtrado, hsh
+    hsh
+  end
 
-  def self.horas
-    max = group(:maquina).maximum(:horometro)
-    min = group(:maquina).minimum(:horometro)
-    max.inject({}) do |hsh,(k,v)|
-      hsh[k] = (v - min[k]).to_i
-      hsh
+  def self.horas filtrado, hsh
+    max = filtrado.group(:maquina).maximum(:horometro)
+    min = filtrado.group(:maquina).minimum(:horometro)
+    max.each do |k,v|
+      hsh[k] = {horas: (v - min[k]).to_i}
     end
   end
-  def self.gasoil(precio)
-    where("insumo like '%gasoil%'").group(:maquina).sum(:cantidad).inject({}) do |hsh,(k,v)|
-      hsh[k] = {cantidad: v.to_i, costo: (v * precio).to_f }
-      hsh
+
+  def self.gasoil filtrado, hsh, precio
+    filtrado.where("insumo like '%gasoil%'").group(:maquina).sum(:cantidad).each do |k,v|
+      hsh[k].merge!({gasoil_cantidad: v.to_i, gasoil_costo: (v * precio).to_f })
     end
   end
-  def self.gastos_varios
-    where("insumo not like '%gasoil%'").group(:maquina).sum("cantidad * costoestandar").inject({}) do |hsh,(k,v)|
-      hsh[k] = v.to_i
-      hsh
+
+  def self.gastos_varios filtrado, hsh
+    filtrado.where("insumo not like '%gasoil%'").group(:maquina).sum("cantidad * costoestandar").each do |k,v|
+      hsh[k].merge!({gastos_varios: v.to_i})
     end
   end
 

@@ -5,30 +5,21 @@ class Reporteador
   end
 
   def generar
+    hsh = {}
 
-    #obtengo hash k = nombre de la maquina y un v = un hash con superficie
-    hsh = Labor.where(reporte: @reporte).sup
-    hsh.each do |k,v|
-      hsh[k].merge!({horas: 0, gasoil: {cantidad: 0, costo: 0}, gastos_varios: 0})
+    Labor.sup(@reporte).each do |k,v|
+      hsh[k] = Resumen.new k, superficie: v[:superficie]
     end
-    Mantenimiento.where(reporte: @reporte).horas.each do |k,v|
-      if hsh[k]
-        hsh[k][:horas] = v
-      else
-        hsh[k] = {horas: v, gasoil: {cantidad: 0, costo: 0}, gastos_varios: 0}
-      end
+
+    Mantenimiento.resumen(@reporte, @precio_gasoil).each do |k,v|
+      hsh[k] ||= Resumen.new k
+      hsh[k].update(v)
     end
-    Mantenimiento.where(reporte: @reporte).gasoil(@precio_gasoil).each do |k,v|
-      hsh[k][:gasoil] = v
+
+    hsh.inject([]) do |ary, (k,v)|
+      ary.push(v.as_json)
+      ary
     end
-    Mantenimiento.gastos_varios.each do |k,v|
-      hsh[k][:gastos_varios] = v
-    end
-    ary = []
-    hsh.each do |k,v|
-      ary.push({nombre: k }.merge(v))
-    end
-    ary
 
   end
 
