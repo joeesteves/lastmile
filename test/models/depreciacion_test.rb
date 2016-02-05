@@ -11,4 +11,8 @@ class DepreciacionTest < ActiveSupport::TestCase
     # 5 del archivo mas 4 fixtures
     assert Depreciacion.where(reporte: reporte).count == 1, "Las lineas en la tabla (#{Depreciacion.where(reporte: reporte).count }) no coinciden con las del archivo"
   end
+  test "cuota" do
+    assert Depreciacion.maquina('alfa') == {depreciacion: 20 }
+    assert Depreciacion.maquina('beta') == {depreciacion: 16 }
+  end
 end

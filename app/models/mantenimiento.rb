@@ -11,7 +11,8 @@ class Mantenimiento < ActiveRecord::Base
     self.costoestandar = valor
   end
 
-  def self.resumen reporte, precio_gasoil
+  def self.resumen reporte, args = {}
+    precio_gasoil = args[:precio_gasoil]
     filtrado = self.where(reporte: reporte)
     hsh = {}
     horas filtrado, hsh

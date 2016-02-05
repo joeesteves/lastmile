@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  maquina: MyString
-  valor: 9.99
-  residual: 9.99
-  vidautil: 9.99
-  cuota: 9.99
+  maquina: alfa
+  valor: 120
+  residual: 20
+  vidautil: 5
+  cuota: 20
 
 two:
-  maquina: MyString
-  valor: 9.99
-  residual: 9.99
-  vidautil: 9.99
-  cuota: 9.99
+  maquina: beta
+  valor: 100
+  residual: 20
+  vidautil: 5
+  cuota: 16

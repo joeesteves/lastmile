@@ -42,8 +42,8 @@ class MantenimientoTest < ActiveSupport::TestCase
 
 
   test  "resumen" do
-    resumen = Mantenimiento.resumen 'fertilizadoras', 2
-    assert Mantenimiento.resumen 'fertilizadoras', 2
+    resumen = Mantenimiento.resumen 'fertilizadoras', precio_gasoil: 2
+    assert resumen['alfa'][:gasoil_cantidad] == 200
   end
 
   # test  "gasoil" do

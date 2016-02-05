@@ -1,14 +1,18 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  nombre: MyString
-  costo: 9.99
-  maquina: MyString
-  porcentaje: 9.99
+  nombre: Jorge Cafrune
+  costo: 10000
+  maquina: alfa
+  porcentaje: 70
   reporte: todos
 two:
-  nombre: MyString
-  costo: 9.99
-  maquina: MyString
-  porcentaje: 9.99
+  nombre: Jorge Cafrune
+  costo: 10000
+  maquina: beta
+  porcentaje: 30
+  reporte: todos
+three:
+  nombre: Pepe Gomez
+  costo: 15000
+  maquina: beta
+  porcentaje: 50
   reporte: todos

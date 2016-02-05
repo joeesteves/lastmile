@@ -6,21 +6,17 @@ class Reporteador
 
   def generar
     hsh = {}
-
-    Labor.sup(@reporte).each do |k,v|
-      hsh[k] = Resumen.new k, superficie: v[:superficie]
+    [Labor, Mantenimiento].each do |klass|
+      klass.resumen(@reporte, precio_gasoil: @precio_gasoil).each do |k,v|
+        hsh[k] ||= Resumen.new k
+        hsh[k].update(v)
+      end
     end
-
-    Mantenimiento.resumen(@reporte, @precio_gasoil).each do |k,v|
-      hsh[k] ||= Resumen.new k
-      hsh[k].update(v)
+    hsh.each do |k,v|
+      hsh[k].update Persona.maquina(k)
+      hsh[k].update Depreciacion.maquina(k)
     end
-
-    hsh.inject([]) do |ary, (k,v)|
-      ary.push(v.as_json)
-      ary
-    end
-
+    hsh.inject([]) { |ary, (k,v)| ary.push(v.as_json); ary }
   end
 
 end
