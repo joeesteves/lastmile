@@ -13,6 +13,7 @@ class Reporteador
       end
     end
     hsh.each do |k,v|
+      hsh[k].gastos_varios += Compra.maquina(k)
       hsh[k].update Persona.maquina(k)
       hsh[k].update Depreciacion.maquina(k)
     end

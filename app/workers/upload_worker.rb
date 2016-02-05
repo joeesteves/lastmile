@@ -41,6 +41,8 @@ class UploadWorker
       (2..hoja.last_row).each do |i|
         obj = hoja.row(i)
         headers[:del_index].each_with_index {|i,index| obj.slice!(i-index)}
+        # byebug
+        obj.map!{|i| i || '0' }
         item = "(" + obj.push(reporte, DateTime.now.to_s,DateTime.now.to_s).map{|i| "'"+i.to_s+"'" }.join(', ') + ")"
         values.push item
       end
@@ -51,7 +53,10 @@ class UploadWorker
     end
 
     def headerify hoja
-      head = hoja.row(1).map{ |h| @klass::SINONIMOS[h.downcase.to_sym] || h.downcase }
+      head = hoja.row(1).map do |h|
+        h = '' unless h
+        @klass::SINONIMOS[h.downcase.to_sym] || h.downcase
+      end
       del_index = del_index head
       del_index.each_with_index {|i,index| head.slice!(i-index)}
       head.push('reporte','created_at', 'updated_at')

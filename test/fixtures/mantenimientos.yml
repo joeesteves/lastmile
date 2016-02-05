@@ -2,7 +2,7 @@ one:
   maquina: alfa
   horometro: 1000
   reporte: fertilizadoras
-  insumo: gasoil
+  insumo: GASOIL STOCK
   cantidad: 100
 two:
   maquina: alfa

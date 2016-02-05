@@ -2,20 +2,20 @@
 
 one:
   fecha: 2016-02-04
-  maquina: MyString
-  proveedor: MyString
-  insumo: MyString
-  obs: MyString
-  valor: 10.00
-  comprobante: MyString
+  maquina: alfa
+  proveedor: roncoco
+  insumo: matafuel doble
+  obs:
+  valor: 15.33
+  comprobante: 123456
   reporte: fertilizadoras
 
 two:
   fecha: 2016-02-04
-  maquina: MyString
-  proveedor: MyString
-  insumo: MyString
-  obs: MyString
+  maquina: beta
+  proveedor: roncoco
+  insumo: matafuel de presion continua
+  obs:
   valor: 11.22
-  comprobante: MyString
+  comprobante: 4321
   reporte: fertilizadoras

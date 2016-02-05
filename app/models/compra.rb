@@ -8,4 +8,7 @@ class Compra < ActiveRecord::Base
     'importe mon. secundaria': 'valor'
   }
 
+  def self.maquina maquina
+    where(maquina: maquina).sum(:valor).to_f
+  end
 end

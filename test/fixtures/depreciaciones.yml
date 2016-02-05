@@ -6,6 +6,7 @@ one:
   residual: 20
   vidautil: 5
   cuota: 20
+  reporte: todos
 
 two:
   maquina: beta
@@ -13,3 +14,4 @@ two:
   residual: 20
   vidautil: 5
   cuota: 16
+  reporte: todos

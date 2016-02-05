@@ -30,13 +30,13 @@ class Mantenimiento < ActiveRecord::Base
   end
 
   def self.gasoil filtrado, hsh, precio
-    filtrado.where("insumo like '%gasoil%'").group(:maquina).sum(:cantidad).each do |k,v|
+    filtrado.where("insumo ilike 'gasoil%'").group(:maquina).sum(:cantidad).each do |k,v|
       hsh[k].merge!({gasoil_cantidad: v.to_i, gasoil_costo: (v * precio).to_f })
     end
   end
 
   def self.gastos_varios filtrado, hsh
-    filtrado.where("insumo not like '%gasoil%'").group(:maquina).sum("cantidad * costoestandar").each do |k,v|
+    filtrado.where("insumo not ilike 'gasoil%'").group(:maquina).sum("cantidad * costoestandar").each do |k,v|
       hsh[k].merge!({gastos_varios: v.to_i})
     end
   end
