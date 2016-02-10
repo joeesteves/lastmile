@@ -1,0 +1,98 @@
+!_TAG_FILE_FORMAT	2	/extended format/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Łukasz Korecki	/lukasz@korecki.me/
+!_TAG_PROGRAM_NAME	CoffeeTags	//
+!_TAG_PROGRAM_URL	https://github.com/lukaszkorecki/CoffeeTags	/GitHub repository/
+!_TAG_PROGRAM_VERSION	0.6.0	//
+AddReporteToCompras	db/migrate/20160204150715_add_reporte_to_compras.rb	/^class AddReporteToCompras < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+AddReporteToPersonasDepreciacion	db/migrate/20160204170649_add_reporte_to_personas_depreciacion.rb	/^class AddReporteToPersonasDepreciacion < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+AddReportetoManten	db/migrate/20160125235525_add_reporteto_manten.rb	/^class AddReportetoManten < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+AddRerporteToLabores	db/migrate/20160125205410_add_rerporte_to_labores.rb	/^class AddRerporteToLabores < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Lastmile	inherits:Rails.Application
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::API$/;"	c	inherits:ActionController.API
+Base	config/initializers/open_class.rb	/^class ActiveRecord::Base$/;"	c	class:ActiveRecord
+ChangeHorometroToDecimal	db/migrate/20160202201516_change_horometro_to_decimal.rb	/^class ChangeHorometroToDecimal < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+ChangeProductoToInsumoInCompras	db/migrate/20160204162159_change_producto_to_insumo_in_compras.rb	/^class ChangeProductoToInsumoInCompras < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+ChangeValorStringPorDec	db/migrate/20160204141339_change_valor_string_por_dec.rb	/^class ChangeValorStringPorDec < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+ClassMethods	app/models/custom_accessor.rb	/^  module ClassMethods$/;"	m	class:CustomAccessor
+ClassMethods	app/models/importador.rb	/^	module ClassMethods$/;"	m	class:Importador
+Compra	app/models/compra.rb	/^class Compra < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+CompraTest	test/models/compra_test.rb	/^class CompraTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+CreateCompras	db/migrate/20160204120402_create_compras.rb	/^class CreateCompras < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+CreateDepreciaciones	db/migrate/20160204164549_create_depreciaciones.rb	/^class CreateDepreciaciones < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+CreateEstados	db/migrate/20160203170225_create_estados.rb	/^class CreateEstados < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+CreateLabores	db/migrate/20160124120800_create_labores.rb	/^class CreateLabores < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+CreateMantenimientos	db/migrate/20160125235353_create_mantenimientos.rb	/^class CreateMantenimientos < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+CreatePersonas	db/migrate/20160204164603_create_personas.rb	/^class CreatePersonas < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+CustomAccessor	app/models/custom_accessor.rb	/^module CustomAccessor$/;"	m
+Depreciacion	app/models/depreciacion.rb	/^class Depreciacion < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+DepreciacionTest	test/models/depreciacion_test.rb	/^class DepreciacionTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+Estado	app/models/estado.rb	/^class Estado < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+EstadoTest	test/models/estado_test.rb	/^class EstadoTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+EstadosController	app/controllers/estados_controller.rb	/^class EstadosController < ApplicationController$/;"	c	inherits:ApplicationController
+Importador	app/models/importador.rb	/^module Importador$/;"	m
+Labor	app/models/labor.rb	/^class Labor < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+LaborTest	test/models/labor_test.rb	/^class LaborTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+LaboresControllerTest	test/controllers/labores_controller_test.rb	/^class LaboresControllerTest < ActionController::TestCase$/;"	c	inherits:ActionController.TestCase
+Lastmile	config/application.rb	/^module Lastmile$/;"	m
+Mantenimiento	app/models/mantenimiento.rb	/^class Mantenimiento < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+MantenimientoTest	test/models/mantenimiento_test.rb	/^class MantenimientoTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+Persona	app/models/persona.rb	/^class Persona < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+PersonaTest	test/models/persona_test.rb	/^class PersonaTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+Reporteador	app/models/reporteador.rb	/^class Reporteador$/;"	c
+ReporteadorController	app/controllers/reporteador_controller.rb	/^class ReporteadorController < ApplicationController$/;"	c	inherits:ApplicationController
+ReporteadorTest	test/models/reporteador_test.rb	/^class ReporteadorTest < ActiveSupport::TestCase$/;"	c	inherits:ActiveSupport.TestCase
+Resumen	app/models/resumen.rb	/^class Resumen$/;"	c
+SINONIMOS	app/models/compra.rb	/^  SINONIMOS = {$/;"	C	class:Compra
+SINONIMOS	app/models/depreciacion.rb	/^Depreciacion::SINONIMOS = {$/;"	C	class:Depreciacion
+SINONIMOS	config/initializers/open_class.rb	/^  SINONIMOS = {}$/;"	C	class:ActiveRecord.Base
+TestCase	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c	class:ActiveSupport
+UploadWorker	app/workers/upload_worker.rb	/^class UploadWorker$/;"	c
+UploaderController	app/controllers/uploader_controller.rb	/^class UploaderController < ApplicationController$/;"	c	inherits:ApplicationController
+calcula_total	app/models/resumen.rb	/^  def calcula_total$/;"	f	class:Resumen
+change	db/migrate/20160124120800_create_labores.rb	/^  def change$/;"	f	class:CreateLabores
+change	db/migrate/20160125205410_add_rerporte_to_labores.rb	/^  def change$/;"	f	class:AddRerporteToLabores
+change	db/migrate/20160125235353_create_mantenimientos.rb	/^  def change$/;"	f	class:CreateMantenimientos
+change	db/migrate/20160125235525_add_reporteto_manten.rb	/^  def change$/;"	f	class:AddReportetoManten
+change	db/migrate/20160202201516_change_horometro_to_decimal.rb	/^  def change$/;"	f	class:ChangeHorometroToDecimal
+change	db/migrate/20160203170225_create_estados.rb	/^  def change$/;"	f	class:CreateEstados
+change	db/migrate/20160204120402_create_compras.rb	/^  def change$/;"	f	class:CreateCompras
+change	db/migrate/20160204141339_change_valor_string_por_dec.rb	/^  def change$/;"	f	class:ChangeValorStringPorDec
+change	db/migrate/20160204150715_add_reporte_to_compras.rb	/^  def change$/;"	f	class:AddReporteToCompras
+change	db/migrate/20160204162159_change_producto_to_insumo_in_compras.rb	/^  def change$/;"	f	class:ChangeProductoToInsumoInCompras
+change	db/migrate/20160204164549_create_depreciaciones.rb	/^  def change$/;"	f	class:CreateDepreciaciones
+change	db/migrate/20160204164603_create_personas.rb	/^  def change$/;"	f	class:CreatePersonas
+change	db/migrate/20160204170649_add_reporte_to_personas_depreciacion.rb	/^  def change$/;"	f	class:AddReporteToPersonasDepreciacion
+check	app/controllers/estados_controller.rb	/^  def check$/;"	f	class:EstadosController
+clean	app/models/importador.rb	/^    def clean reporte$/;"	f	class:Importador.ClassMethods
+costostandard=	app/models/mantenimiento.rb	/^  def costostandard=(valor)$/;"	f	class:Mantenimiento
+create	app/controllers/uploader_controller.rb	/^  def create$/;"	f	class:UploaderController
+csv	app/workers/upload_worker.rb	/^    def csv file_path, reporte$/;"	f	class:UploadWorker
+custom_accessor	app/models/custom_accessor.rb	/^    def custom_accessor attrs = {}$/;"	f	class:CustomAccessor.ClassMethods
+del_index	app/workers/upload_worker.rb	/^    def del_index head$/;"	f	class:UploadWorker
+filter	app/workers/upload_worker.rb	/^    def filter hsh$/;"	f	class:UploadWorker
+gasoil	app/models/mantenimiento.rb	/^  def self.gasoil filtrado, hsh, precio$/;"	F	class:Mantenimiento
+gastos_varios	app/models/mantenimiento.rb	/^  def self.gastos_varios filtrado, hsh$/;"	F	class:Mantenimiento
+generar	app/models/reporteador.rb	/^  def generar$/;"	f	class:Reporteador
+headerify	app/workers/upload_worker.rb	/^    def headerify hoja$/;"	f	class:UploadWorker
+horas	app/models/mantenimiento.rb	/^  def self.horas filtrado, hsh$/;"	F	class:Mantenimiento
+humanize	app/models/resumen.rb	/^  def humanize(nombres)$/;"	f	class:Resumen
+importar	app/models/importador.rb	/^		def importar file, reporte$/;"	f	class:Importador.ClassMethods
+index	app/controllers/reporteador_controller.rb	/^  def index$/;"	f	class:ReporteadorController
+initialize	app/models/reporteador.rb	/^  def initialize reporte, opts = {}$/;"	f	class:Reporteador
+initialize	app/models/resumen.rb	/^  def initialize nombre, args = {}$/;"	f	class:Resumen
+insumocantidad=	app/models/mantenimiento.rb	/^  def insumocantidad=(valor)$/;"	f	class:Mantenimiento
+insumonombre=	app/models/mantenimiento.rb	/^  def insumonombre=(valor)$/;"	f	class:Mantenimiento
+maquina	app/models/compra.rb	/^  def self.maquina maquina$/;"	F	class:Compra
+maquina	app/models/depreciacion.rb	/^  def self.maquina maquina$/;"	F	class:Depreciacion
+maquina	app/models/persona.rb	/^  def self.maquina maquina$/;"	F	class:Persona
+mass_import	app/workers/upload_worker.rb	/^    def mass_import reporte, hoja$/;"	f	class:UploadWorker
+nombre_operarios	app/models/resumen.rb	/^  attr_reader :nombre_operarios$/;"	f	class:Resumen
+nombre_operarios=	app/models/resumen.rb	/^  def nombre_operarios=(nombres)$/;"	f	class:Resumen
+perform	app/workers/upload_worker.rb	/^  def perform(klass, file_path, reporte, referencia)$/;"	f	class:UploadWorker
+resumen	app/models/labor.rb	/^  def self.resumen reporte, args = {}$/;"	F	class:Labor
+resumen	app/models/mantenimiento.rb	/^  def self.resumen reporte, args = {}$/;"	F	class:Mantenimiento
+set_access_control_headers	app/controllers/application_controller.rb	/^  def set_access_control_headers$/;"	f	class:ApplicationController
+update	app/models/resumen.rb	/^  def update args = {}$/;"	f	class:Resumen
+xls	app/workers/upload_worker.rb	/^    def xls file_path, reporte$/;"	f	class:UploadWorker
+xlsx	app/workers/upload_worker.rb	/^    def xlsx file_path, reporte$/;"	f	class:UploadWorker
