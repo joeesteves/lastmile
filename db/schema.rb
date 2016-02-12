@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204170649) do
+ActiveRecord::Schema.define(version: 20160211220903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160204170649) do
     t.decimal  "valor",       precision: 10, scale: 2
     t.string   "reporte"
     t.string   "insumo"
+    t.string   "doc"
   end
 
   create_table "depreciaciones", force: :cascade do |t|
@@ -49,10 +50,15 @@ ActiveRecord::Schema.define(version: 20160204170649) do
 
   create_table "labores", force: :cascade do |t|
     t.string   "maquina"
-    t.decimal  "superficie", precision: 10, scale: 2
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.decimal  "superficie",      precision: 10, scale: 2
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "reporte"
+    t.string   "obs"
+    t.string   "doc"
+    t.string   "establecimiento"
+    t.string   "lote"
+    t.date     "fecha"
   end
 
   create_table "mantenimientos", force: :cascade do |t|
@@ -64,6 +70,9 @@ ActiveRecord::Schema.define(version: 20160204170649) do
     t.datetime "updated_at",                             null: false
     t.string   "reporte"
     t.decimal  "horometro",     precision: 10, scale: 2
+    t.string   "obs"
+    t.string   "doc"
+    t.date     "fecha"
   end
 
   create_table "personas", force: :cascade do |t|
