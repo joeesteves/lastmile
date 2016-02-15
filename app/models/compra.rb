@@ -1,5 +1,5 @@
 class Compra < ActiveRecord::Base
-  include Importador
+  include Importador, Comun
   SINONIMOS = {
     'dim. valor': 'maquina',
     'f.comprobante': 'fecha',

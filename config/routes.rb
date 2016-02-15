@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :reporteador, only: :index
   resources :labores, only: :index
   resources :mantenimientos, only: :index
+  resources :compras, only: :index
 
   resources :uploader, only: :create
   post 'estados/check'

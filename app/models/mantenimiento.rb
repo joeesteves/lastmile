@@ -5,7 +5,6 @@ class Mantenimiento < ActiveRecord::Base
     'documento': 'doc'
   }
 
-
   def self.resumen reporte, args = {}
     precio_gasoil = args[:precio_gasoil]
     filtrado = self.where(reporte: reporte)
@@ -15,7 +14,6 @@ class Mantenimiento < ActiveRecord::Base
     gastos_varios filtrado, hsh
     hsh
   end
-
 
   private
 
