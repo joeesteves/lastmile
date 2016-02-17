@@ -17,6 +17,20 @@ class Reporteador
       hsh[k].update Persona.maquina(k)
       hsh[k].update Depreciacion.maquina(k)
     end
+
+
+    c = Resumen.new "Consolidado"
+    hsh.each do |k,v|
+      c.superficie += v.superficie
+      c.horas += v.horas
+      c.gasoil_cantidad += v.gasoil_cantidad
+      c.gasoil_costo += v.gasoil_costo
+      c.gastos_varios += v.gastos_varios
+      c.depreciacion += v.depreciacion
+      c.costo_operarios += v.costo_operarios
+    end
+    c.calcula_total
+    hsh["Consolidado"] = c
     hsh.inject([]) { |ary, (k,v)| ary.push(v.as_json); ary }
   end
 

@@ -1,16 +1,20 @@
 one:
   maquina: alfa
+  actividad: soja
   superficie: 10
   reporte: fertilizadoras
 two:
   maquina: alfa
+  actividad: soja
   superficie: 10
   reporte: fertilizadoras
 three:
   maquina: beta
+  actividad: soja
   superficie: 5
   reporte: fertilizadoras
 four:
   maquina: beta
+  actividad: maiz
   superficie: 5
   reporte: fertilizadoras

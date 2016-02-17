@@ -1,7 +1,7 @@
 class LaboresController < ApplicationController
   def index
     reporte = params[:reporte]
-    @coleccion = @coleccion = Labor.detalle(reporte, excluded: ['maquina'])
+    @coleccion = @coleccion = Labor.por_actividad(reporte)
     render json: @coleccion
   end
 

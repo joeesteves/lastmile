@@ -21,4 +21,11 @@ class LaborTest < ActiveSupport::TestCase
     UploadWorker.drain
     assert Estado.find_by(referencia: 'fertilizadoras_labores').valor == 'terminado'
   end
+  test  "por actividad" do
+    resumen = Labor.por_actividad('fertilizadoras')
+    beta = resumen.select {|i| i['maquina'] == 'beta' }
+    alfa = resumen.select {|i| i['maquina'] == 'alfa' }
+    assert alfa[0]['actividades'][0]['superficie'].to_f == 20
+    assert beta[0]['actividades'][0]['superficie'].to_f == 5
+  end
 end
