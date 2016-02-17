@@ -19,7 +19,7 @@ class Reporteador
     end
 
 
-    c = Resumen.new "Consolidado"
+    c = Resumen.new "CONSOLIDADO"
     hsh.each do |k,v|
       c.superficie += v.superficie
       c.horas += v.horas
