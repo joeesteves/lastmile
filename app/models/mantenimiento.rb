@@ -1,7 +1,7 @@
 class Mantenimiento < ActiveRecord::Base
   include Importador, Comun
   SINONIMOS = {
-    'descripción item': 'obs',
+    'descripción': 'obs',
     'documento': 'doc'
   }
 
@@ -14,7 +14,9 @@ class Mantenimiento < ActiveRecord::Base
     gastos_varios filtrado, hsh
     hsh
   end
-
+  def self.detalle reporte, args = {}
+    super reporte, [:fecha, :doc, :horometro, :obs], [['nombre', :insumo], :cantidad, :costoestandar], args
+  end
   private
 
     def self.horas filtrado, hsh

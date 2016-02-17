@@ -67,6 +67,7 @@ class MantenimientoTest < ActiveSupport::TestCase
     assert detalle.is_a?(Array), 'detalle not array'
     assert detalle.length == 1, 'array no tiene el tamaño correcto'
     assert detalle.first.is_a?(Hash), 'detalle first no es objeto'
+    assert detalle.first["detalle"].first["insumos"].is_a?(Array), 'insumos no es un array'
     beta = detalle.select {|i| i['maquina'] == 'beta' }
     assert beta[0]['detalle'].is_a?(Array), 'detalle not array'
   end
