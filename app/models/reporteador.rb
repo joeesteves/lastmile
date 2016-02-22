@@ -1,6 +1,6 @@
 class Reporteador
   def initialize reporte, opts = {}
-    @reporte = 'fertilizadoras'
+    @reporte = reporte
     @precio_gasoil = opts[:precio_gasoil] || 1
   end
 
