@@ -10,9 +10,9 @@ class LaborTest < ActiveSupport::TestCase
     assert UploadWorker.jobs.count == 1
     UploadWorker.drain
     # 5 del archivo 4 del fixtures
-    assert Labor.all.count == 5, 'Las lineas en la tabla no coinciden con las del archivo '
+    assert Labor.where(reporte: 'fertilizadoras').count == 5, 'Las lineas en la tabla no coinciden con las del archivo '
   end
-  test  "Estados de importacions" do
+  test  "Estados de importaciones" do
     UploadWorker.jobs.clear
     file = File.open 'test/files/labores.csv'
     Labor.importar(file, 'fertilizadoras')
@@ -21,7 +21,7 @@ class LaborTest < ActiveSupport::TestCase
     UploadWorker.drain
     assert Estado.find_by(referencia: 'fertilizadoras_labores').valor == 'terminado'
   end
-  test  "por actividad" do
+  test "por actividad" do
     resumen = Labor.por_actividad('fertilizadoras')
     beta = resumen.select {|i| i['maquina'] == 'beta' }
     alfa = resumen.select {|i| i['maquina'] == 'alfa' }

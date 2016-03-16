@@ -24,3 +24,29 @@ four:
   insumo: filtro
   cantidad: 50
   costoestandar: 3
+five:
+  maquina: aguatero
+  horometro: 1000
+  reporte: fumigadoras
+  insumo: filtro
+  cantidad: 50
+  costoestandar: 4
+six:
+  maquina: mosquito
+  horometro: 1000
+  reporte: fumigadoras
+  insumo: panel
+  cantidad: 1
+  costoestandar: 1000
+seven:
+  maquina: aguatero
+  horometro: 1000
+  reporte: fumigadoras
+  insumo: gasoil
+  cantidad: 10
+eight:
+  maquina: mosquito
+  horometro: 1000
+  reporte: fumigadoras
+  insumo: gasoil
+  cantidad: 20

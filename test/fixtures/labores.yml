@@ -18,3 +18,13 @@ four:
   actividad: maiz
   superficie: 5
   reporte: fertilizadoras
+five:
+  maquina: mosquito
+  actividad: soja
+  superficie: 10
+  reporte: fumigadora
+six:
+  maquina: mosquito
+  actividad: soja
+  superficie: 15
+  reporte: fumigadora

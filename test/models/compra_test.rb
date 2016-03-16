@@ -1,7 +1,6 @@
 require 'test_helper'
 require 'sidekiq/testing'
 
-
 class CompraTest < ActiveSupport::TestCase
   test  "Importar XLS" do
     UploadWorker.jobs.clear
@@ -19,7 +18,7 @@ class CompraTest < ActiveSupport::TestCase
     assert UploadWorker.jobs.count == 1
     UploadWorker.drain
     # 5 del archivo mas 4 fixtures
-    @compra = Compra.first
+    @compra = Compra.where(reporte: 'fertilizadoras').first
     assert Compra.where(reporte: 'fertilizadoras').count == 1, "Las lineas en la tabla (#{Compra.where(reporte: 'fertilizadoras').count}) no coinciden con las del archivo"
     assert @compra.maquina == 'CAMION FOTON CON VOLCADORA 6*2 2014 (374)', 'no traduce bien dim valor'
     assert @compra.insumo == 'REPARACIONES Y MANTENIMIENTOS NO ADM. VEHICULOS', 'no traduce bien producto'

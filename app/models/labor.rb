@@ -15,7 +15,9 @@ class Labor < ActiveRecord::Base
     maquinas.inject([]) do |ary,item|
       hsh = {}
       hsh[:maquina] = item.maquina
-      hsh[:actividades]  = where(reporte: reporte, maquina: item.maquina).select("actividad as nombre, SUM(superficie) as superficie").group(:actividad).order(:actividad)
+      hsh[:actividades] = where(reporte: reporte, maquina: item.maquina).select("upper(actividad) as nombre, SUM(superficie) as superficie").group(:actividad).order(:actividad)
+      hsh[:actividades] = hsh[:actividades].as_json
+      hsh[:actividades].insert(-1, hsh[:actividades].delete_at(0)) if hsh[:actividades][0]["nombre"] == "0"
       ary.push hsh
       ary.as_json
     end
