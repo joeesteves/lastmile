@@ -10,3 +10,7 @@ class Persona < ActiveRecord::Base
     hsh
   end
 end
+
+Persona::SINONIMOS = {
+  'persona': 'nombre'
+}
