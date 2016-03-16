@@ -1,6 +1,6 @@
 class Resumen
   include CustomAccessor
-  attr_reader :nombre_operarios
+  attr_reader :nombre_operarios, :implementos
   custom_accessor to_s: [:nombre], to_f: [:superficie, :horas, :gasoil_cantidad, :gasoil_costo, :gastos_varios, :depreciacion, :costo_operarios, :total]
 
   def initialize nombre, args = {}
@@ -13,6 +13,7 @@ class Resumen
     @depreciacion = args[:depreciacion] || 0.00
     @costo_operarios = args[:costo_operarios] || 0.00
     @nombre_operarios = humanize(args[:nombre_operarios]) || ''
+    @implementos = ''
     calcula_total
   end
 
@@ -35,4 +36,14 @@ class Resumen
       nombres
     end
   end
+
+  def add_implementos(implemento)
+    @implementos_temp ||= []
+    @implementos_temp.push(implemento)
+    @implementos = humanize(@implementos_temp)
+  end
+  def as_json
+    super(except: 'implementos_temp')
+  end
+
 end

@@ -22,13 +22,8 @@ class ReporteadorTest < ActiveSupport::TestCase
   # end
   test  "fumigadoras con implementos" do
     a = Reporteador.new('fumigadoras', precio_gasoil: 1).generar.select{|i| i["nombre"] == 'mosquito'}[0]
-    # byebug
-    assert_equal 1750, a['gastos_varios']
-    assert_equal 25, a['gasoil_cantidad']
-    assert_equal 25, a['gasoil_costo']
-    assert_equal 1775, a['total']
-
-
+    json_esperado = {"nombre"=>"mosquito", "superficie"=>0.0, "horas"=>0.0, "gasoil_cantidad"=>25.0, "gasoil_costo"=>25.0, "gastos_varios"=>1750.0, "depreciacion"=>52.5, "costo_operarios"=>25000.0, "nombre_operarios"=>"Julian Gomez", "implementos"=>"aguatero: 50.0 %", "total"=>26827.5}
+    assert_equal json_esperado, a
   end
 
 end

@@ -20,27 +20,30 @@ class Reporteador
     Asociacion.where(reporte: @reporte).each do |asoc|
       if hsh[asoc.maquina]
         porcentaje = asoc.porcentaje
-        hsh[asoc.maquina].gastos_varios += (hsh[asoc.implemento].gastos_varios * porcentaje) / 100
-        hsh[asoc.maquina].gasoil_cantidad += (hsh[asoc.implemento].gasoil_cantidad * porcentaje) / 100
-        hsh[asoc.maquina].gasoil_costo += (hsh[asoc.implemento].gasoil_costo * porcentaje) / 100
-        hsh[asoc.maquina].depreciacion += (hsh[asoc.implemento].depreciacion * porcentaje) / 100
-        hsh[asoc.maquina].costo_operarios += (hsh[asoc.implemento].costo_operarios * porcentaje) / 100
+        %w(gastos_varios gasoil_cantidad gasoil_costo depreciacion costo_operarios).each do |at|
+          hsh[asoc.maquina].send(at+'=', hsh[asoc.maquina].send(at) + (hsh[asoc.implemento].send(at) * porcentaje) / 100)
+        end
+        hsh[asoc.maquina].add_implementos("#{asoc.implemento}: #{asoc.porcentaje} %")
         hsh[asoc.maquina].calcula_total
       end
     end
+
     Asociacion.where(reporte: @reporte).select(:implemento).distinct.each do |item|
       hsh.delete(item.implemento)
     end
 
     c = Resumen.new "CONSOLIDADO"
     hsh.each do |k,v|
-      c.superficie += v.superficie
-      c.horas += v.horas
-      c.gasoil_cantidad += v.gasoil_cantidad
-      c.gasoil_costo += v.gasoil_costo
-      c.gastos_varios += v.gastos_varios
-      c.depreciacion += v.depreciacion
-      c.costo_operarios += v.costo_operarios
+      %w(superficie horas gasoil_cantidad gasoil_costo gastos_varios depreciacion costo_operarios).each do |at|
+        c.send(at+'=', c.send(at) + v.send(at))
+      end
+      # c.superficie += v.superficie
+      # c.horas += v.horas
+      # c.gasoil_cantidad += v.gasoil_cantidad
+      # c.gasoil_costo += v.gasoil_costo
+      # c.gastos_varios += v.gastos_varios
+      # c.depreciacion += v.depreciacion
+      # c.costo_operarios += v.costo_operarios
     end
 
     c.calcula_total

@@ -16,3 +16,15 @@ three:
   maquina: beta
   porcentaje: 50
   reporte: todos
+four:
+  nombre: Julian Gomez
+  costo: 20000
+  maquina: mosquito
+  porcentaje: 100
+  reporte: todos
+five:
+  nombre: Agutero Gomez
+  costo: 10000
+  maquina: aguatero
+  porcentaje: 100
+  reporte: todos

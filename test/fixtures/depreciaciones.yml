@@ -1,5 +1,3 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   maquina: alfa
   valor: 120
@@ -7,11 +5,24 @@ one:
   vidautil: 5
   cuota: 20
   reporte: todos
-
 two:
   maquina: beta
   valor: 100
   residual: 20
   vidautil: 5
   cuota: 16
+  reporte: todos
+three:
+  maquina: mosquito
+  valor: 100
+  residual: 20
+  vidautil: 2
+  cuota: 40
+  reporte: todos
+four:
+  maquina: aguatero
+  valor: 50
+  residual: 0
+  vidautil: 2
+  cuota: 25
   reporte: todos
