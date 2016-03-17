@@ -1,9 +1,5 @@
 class Mantenimiento < ActiveRecord::Base
   include Importador, Comun
-  SINONIMOS = {
-    'descripción': 'obs',
-    'documento': 'doc'
-  }
 
   def self.resumen reporte, args = {}
     precio_gasoil = args[:precio_gasoil]
@@ -41,15 +37,9 @@ class Mantenimiento < ActiveRecord::Base
         hsh[k].merge!({gastos_varios: v.to_i})
       end
     end
-
 end
 
-# def insumonombre=(valor)
-#   self.insumo = valor
-# end
-# def insumocantidad=(valor)
-#   self.cantidad = valor
-# end
-# def costostandard=(valor)
-#   self.costoestandar = valor
-# end
+Mantenimiento::SINONIMOS = {
+  'descripción': 'obs',
+  'documento': 'doc'
+}
