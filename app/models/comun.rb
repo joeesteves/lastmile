@@ -8,6 +8,7 @@ module Comun
 	    @gasoil_query = "insumo not ilike 'gasoil%' and insumo <> ''" if self == Mantenimiento
       @gasoil_query = "insumo ilike 'gasoil%'" if args[:solo_gasoil] == 1
       @implementos = Asociacion.where(reporte: @reporte).select(:implemento).collect(&:implemento)
+      @implementos = [''] if @implementos.empty?
       maquinas = get_maquinas('maquina not IN (?)') | get_maquinas('maquina IN (?)')
       sql_detalle = []
 			detalle_fields.each do |field|
