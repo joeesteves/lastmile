@@ -20,10 +20,13 @@ class Mantenimiento < ActiveRecord::Base
   private
 
     def self.horas filtrado, hsh
-      max = filtrado.group(:maquina).maximum(:horometro)
-      min = filtrado.group(:maquina).minimum(:horometro)
-      max.each do |k,v|
-        hsh[k] = {horas: (v - min[k]).to_i}
+      maquinas = filtrado.select(:maquina).distinct.map {|i| hsh[i.maquina] = {} }
+      max = filtrado.where("insumo ilike 'gasoil%'").group(:maquina).maximum(:horometro)
+      min = filtrado.where("insumo ilike 'gasoil%'").group(:maquina).minimum(:horometro)
+      hsh.each do |k,v|
+        min[k] ||= 0
+        max[k] ||= 0
+        hsh[k] = {horas: (max[k] - min[k]).to_i}
       end
     end
 

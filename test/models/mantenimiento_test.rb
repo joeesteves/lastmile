@@ -71,5 +71,9 @@ class MantenimientoTest < ActiveSupport::TestCase
     beta = detalle.select {|i| i['maquina'] == 'beta' }
     assert beta[0]['detalle'].is_a?(Array), 'detalle not array'
   end
+  test 'cantidad de horas' do
+    resumen = Mantenimiento.resumen 'fertilizadoras', precio_gasoil: 1
+    assert_equal 100, resumen['alfa'][:horas]
+  end
 
 end
