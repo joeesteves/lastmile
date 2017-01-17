@@ -20,7 +20,7 @@ class Reporteador
     Asociacion.where(reporte: @reporte).each do |asoc|
       if hsh[asoc.maquina]
         porcentaje = asoc.porcentaje
-        %w(gastos_varios gasoil_cantidad gasoil_costo depreciacion costo_operarios).each do |at|
+        %w(gastos_varios horas gasoil_cantidad gasoil_costo depreciacion costo_operarios).each do |at|
           hsh[asoc.maquina].send(at+'=', hsh[asoc.maquina].send(at) + (hsh[asoc.implemento].send(at) * porcentaje) / 100)
         end
         hsh[asoc.maquina].add_implementos("#{asoc.implemento}: #{asoc.porcentaje} %")
